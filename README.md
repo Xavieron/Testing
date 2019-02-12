@@ -1,7 +1,11 @@
 # Elphyrecoin2
+
 #How To Compile
+
 ##Linux
+
 ###Prerequisites
+
 You will need the following packages: boost, cmake (3.8 or higher), make, and git.
 
 You will also need either GCC/G++, or Clang.
@@ -30,6 +34,7 @@ cd src
 ./Elphyrecoind --version
 
 ###Ubuntu, using Clang
+
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 You need to modify the below command for your version of ubuntu - see https://apt.llvm.org/
@@ -71,6 +76,7 @@ cd src
 ./Elphyrecoind --version
 
 ###Generic Linux
+
 Ensure you have the dependencies listed above.
 
 If you want to use clang, ensure you set the environment variables CC and CXX. See the ubuntu instructions for an example.
@@ -87,6 +93,7 @@ cd src
 ./Elphyrecoind --version
 
 ###OSX/Apple, using GCC
+
 Prerequisites
 Install XCode and Developer Tools.
 Building
@@ -106,6 +113,7 @@ cd src
 ./Elphyrecoind --version
 
 ###OSX/Apple, using Clang
+
 Prerequisites
 Install XCode and Developer Tools.
 Building
@@ -125,7 +133,9 @@ cd src
 ./Elphyrecoind --version
 
 ##Windows
+
 ###Prerequisites
+
 Install Visual Studio 2017 Community Edition
 When installing Visual Studio, it is required that you install Desktop development with C++
 Install the latest version of Boost - Currently Boost 1.68.
