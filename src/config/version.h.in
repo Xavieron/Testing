@@ -1,9 +1,9 @@
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
 
-#define PROJECT_NAME "Lithe"
-#define PROJECT_SITE "http://github.com/lithe-project"
-#define PROJECT_COPYRIGHT "Copyright 2019, The Lithe Project"
+#define PROJECT_NAME "Elphyrecoin"
+#define PROJECT_SITE "http://github.com/elphyrecoin/elphyrecoin2"
+#define PROJECT_COPYRIGHT "Copyright 2019, The Elphyrecoin Developers"
 #define APP_VER_MAJOR 0
 #define APP_VER_MINOR 1
 #define APP_VER_REV 0

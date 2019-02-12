@@ -1,5 +1,6 @@
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2019, The Lithe Project
+// Copyright (c) 2019, The Elphyrecoin Developers
 // 
 // Please see the included LICENSE file for more information.
 
@@ -31,13 +32,13 @@ namespace WalletConfig
 
     /* The name of service/walletd, the programmatic rpc interface to a
        wallet */
-    const std::string walletdName = "elphyre-service";
+    const std::string walletdName = "elphyrecoin-service";
 
     /* The full name of your crypto */
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "https://github.com/elphyrecoin";
+    const std::string contactLink = "https://github.com/elphyrecoin2";
 
 
     /* The number of decimals your coin has */

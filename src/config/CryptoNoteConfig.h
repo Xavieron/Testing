@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2019, The Lithe Project
+// Copyright (c) 2019, The Elphyrecoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -125,7 +126,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "Elphrecoin";
+const char     CRYPTONOTE_NAME[]                             = "Elphyrecoin";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -178,14 +179,16 @@ const uint64_t DATABASE_READ_BUFFER_MB_DEFAULT_SIZE          = 10;
 const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES               = 100;
 const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 2;
 
-const char     LATEST_VERSION_URL[]                          = "http://github.com/elphrecoin/elphrecoin/";
-const std::string LICENSE_URL                                = "https://github.com/elphrecoin/elphrecoin/blob/master/LICENSE";
+const char     LATEST_VERSION_URL[]                          = "http://github.com/elphyrecoin/elphyrecoin2/";
+const std::string LICENSE_URL                                = "https://github.com/elphyrecoin/elphyrecoin2/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
     {  0x7c, 0x6c, 0x44, 0x6a, 0x65, 0x2a, 0x70, 0x7b, 0x6b, 0x6a, 0x65, 0x6d, 0x7d  }
 };
 
 const char* const SEED_NODES[] = {
-  "127.0.0.1:25501" /* local seed::temp */
+  "163.172.144.213:45500",
+  "51.15.206.147:45500",
+  "51.15.73.100:45500"
 };
 } // CryptoNote
