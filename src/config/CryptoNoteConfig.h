@@ -17,21 +17,21 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 60; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0xe6dc4e2;
-const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 120;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x1ffb6007;
+const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 60;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 3 * DIFFICULTY_TARGET;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(2500000000000000);
-
-const unsigned EMISSION_SPEED_FACTOR                         = 29;
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(25000000000000);
+/* block reward will be roughly 230-240. Max supply is 250MM.*/
+const unsigned EMISSION_SPEED_FACTOR                         = 20;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
@@ -98,13 +98,11 @@ static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 const uint64_t FORK_HEIGHTS[] =
 {
     1,  // 0
-    2,  // 1
-    3,  // 2
-    4  // 3
+    2   // 1
 };
 
 /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK */
-const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                 = 3;
+const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                 = 1;
 
 const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
@@ -127,7 +125,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "Lithe";
+const char     CRYPTONOTE_NAME[]                             = "Elphrecoin";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -144,9 +142,9 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  25500;
-const int      RPC_DEFAULT_PORT                              =  25501;
-const int      SERVICE_DEFAULT_PORT                          =  25502;
+const int      P2P_DEFAULT_PORT                              =  45500;
+const int      RPC_DEFAULT_PORT                              =  45501;
+const int      SERVICE_DEFAULT_PORT                          =  45502;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -180,11 +178,11 @@ const uint64_t DATABASE_READ_BUFFER_MB_DEFAULT_SIZE          = 10;
 const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES               = 100;
 const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT     = 2;
 
-const char     LATEST_VERSION_URL[]                          = "http://github.com/lithe-project/lithe/";
-const std::string LICENSE_URL                                = "https://github.com/lithe-project/lithe/blob/master/LICENSE";
+const char     LATEST_VERSION_URL[]                          = "http://github.com/elphrecoin/elphrecoin/";
+const std::string LICENSE_URL                                = "https://github.com/elphrecoin/elphrecoin/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0x6c, 0x69, 0x74, 0x68, 0x65, 0x20, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74  }
+    {  0x7c, 0x6c, 0x44, 0x6a, 0x65, 0x2a, 0x70, 0x7b, 0x6b, 0x6a, 0x65, 0x6d, 0x7d  }
 };
 
 const char* const SEED_NODES[] = {
