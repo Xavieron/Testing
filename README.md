@@ -1,10 +1,10 @@
 # Elphyrecoin2
 
-#How To Compile
+## How To Compile
 
-##Linux
+### Linux
 
-###Prerequisites
+#### Prerequisites
 
 You will need the following packages: boost, cmake (3.8 or higher), make, and git.
 
@@ -14,7 +14,7 @@ If you are using GCC, you will need GCC-7.0 or higher.
 
 If you are using Clang, you will need Clang 6.0 or higher. You will also need libstdc++-6.0 or higher.
 
-###Ubuntu, using GCC
+#### Ubuntu, using GCC
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo apt-get update
 sudo apt-get install aptitude -y
@@ -33,7 +33,7 @@ The binaries will be in the src folder when you are complete.
 cd src
 ./Elphyrecoind --version
 
-###Ubuntu, using Clang
+#### Ubuntu, using Clang
 
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
@@ -75,7 +75,7 @@ The binaries will be in the src folder when you are complete.
 cd src
 ./Elphyrecoind --version
 
-###Generic Linux
+#### Generic Linux
 
 Ensure you have the dependencies listed above.
 
@@ -92,7 +92,7 @@ The binaries will be in the src folder when you are complete.
 cd src
 ./Elphyrecoind --version
 
-###OSX/Apple, using GCC
+#### OSX/Apple, using GCC
 
 Prerequisites
 Install XCode and Developer Tools.
@@ -112,7 +112,7 @@ The binaries will be in the src folder when you are complete.
 cd src
 ./Elphyrecoind --version
 
-###OSX/Apple, using Clang
+#### OSX/Apple, using Clang
 
 Prerequisites
 Install XCode and Developer Tools.
@@ -132,9 +132,9 @@ The binaries will be in the src folder when you are complete.
 cd src
 ./Elphyrecoind --version
 
-##Windows
+### Windows
 
-###Prerequisites
+#### Prerequisites
 
 Install Visual Studio 2017 Community Edition
 When installing Visual Studio, it is required that you install Desktop development with C++
