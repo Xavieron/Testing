@@ -48,45 +48,50 @@ cd src
 
 #### Ubuntu, using Clang
 
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+`sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y`
+
+`wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -`
+
 You need to modify the below command for your version of ubuntu - see https://apt.llvm.org/
 
 Ubuntu 14.04 (Trusty)
-sudo add-apt-repository "deb https://apt.llvm.org/trusty/ llvm-toolchain-trusty 6.0 main"
+`sudo add-apt-repository "deb https://apt.llvm.org/trusty/ llvm-toolchain-trusty 6.0 main"`
+
 Ubuntu 16.04 (Xenial)
-sudo add-apt-repository "deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial 6.0 main"
+`sudo add-apt-repository "deb https://apt.llvm.org/xenial/ llvm-toolchain-xenial 6.0 main"`
+
 Ubuntu 18.04 (Bionic)
-sudo add-apt-repository "deb https://apt.llvm.org/bionic/ llvm-toolchain-bionic 6.0 main"
+`sudo add-apt-repository "deb https://apt.llvm.org/bionic/ llvm-toolchain-bionic 6.0 main"`
 
-sudo apt-get update
+`sudo apt-get update`
 
-sudo apt-get install aptitude -y
+`sudo apt-get install aptitude -y`
 
-sudo aptitude install -y -o Aptitude::ProblemResolver::SolutionCost='100*canceled-actions,200*removals' build-essential clang-6.0 libstdc++-7-dev git libboost-all-dev python-pip
+`sudo aptitude install -y -o Aptitude::ProblemResolver::SolutionCost='100*canceled-actions,200*removals' build-essential clang-6.0 libstdc++-7-dev git libboost-all-dev python-pip`
 
-sudo pip install cmake
+`sudo pip install cmake`
 
-export CC=clang-6.0
+`export CC=clang-6.0`
 
-export CXX=clang++-6.0
+`export CXX=clang++-6.0`
 
-git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2
+`git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2`
 
-cd elphyrecoin2
+`cd elphyrecoin2`
 
-mkdir build
+`mkdir build`
 
-cd build
+`cd build`
 
-cmake ..
+`cmake ..`
 
-make
+`make`
 
 The binaries will be in the src folder when you are complete.
 
-cd src
-./Elphyrecoind --version
+`cd src`
+
+`./Elphyrecoind --version`
 
 #### Generic Linux
 
@@ -94,56 +99,87 @@ Ensure you have the dependencies listed above.
 
 If you want to use clang, ensure you set the environment variables CC and CXX. See the ubuntu instructions for an example.
 
-git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2
-cd elphyrecoin2
-mkdir build
-cd build
-cmake ..
-make
+`git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2`
+
+`cd elphyrecoin2`
+
+`mkdir build`
+
+`cd build`
+
+`cmake ..`
+
+`make`
+
 The binaries will be in the src folder when you are complete.
 
-cd src
-./Elphyrecoind --version
+`cd src`
+
+`./Elphyrecoind --version`
 
 #### OSX/Apple, using GCC
 
-Prerequisites
+##### Prerequisites
 Install XCode and Developer Tools.
-Building
-which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install --force cmake boost llvm gcc@8
-export CC=gcc-8
-export CXX=g++-8
-git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2
-cd elphyrecoin2
-mkdir build
-cd build
-cmake ..
-make
+
+##### Building
+`which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+`brew install --force cmake boost llvm gcc@8`
+
+`export CC=gcc-8`
+
+`export CXX=g++-8`
+
+`git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2`
+
+`cd elphyrecoin2`
+
+`mkdir build`
+
+`cd build`
+
+`cmake ..`
+
+`make`
+
 The binaries will be in the src folder when you are complete.
 
-cd src
-./Elphyrecoind --version
+`cd src`
+
+`./Elphyrecoind --version`
 
 #### OSX/Apple, using Clang
 
-Prerequisites
+##### Prerequisites
 Install XCode and Developer Tools.
-Building
-which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install --force cmake boost llvm
-export CC=/usr/local/opt/llvm/bin/clang
-export CXX=/usr/local/opt/llvm/bin/clang++
-git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2
-cd elphyrecoin2
-mkdir build
-cd build
-cmake ..
-make
+
+##### Building
+`which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+`brew install --force cmake boost llvm`
+
+`export CC=/usr/local/opt/llvm/bin/clang`
+
+`export CXX=/usr/local/opt/llvm/bin/clang++`
+
+`git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2`
+
+`cd elphyrecoin2`
+
+`mkdir build`
+
+`cd build`
+
+`cmake ..`
+
+`make`
+
 The binaries will be in the src folder when you are complete.
 
-cd src
-./Elphyrecoind --version
+`cd src`
+
+`./Elphyrecoind --version`
 
 ### Windows
 
@@ -152,22 +188,33 @@ cd src
 Install Visual Studio 2017 Community Edition
 When installing Visual Studio, it is required that you install Desktop development with C++
 Install the latest version of Boost - Currently Boost 1.68.
-Building
+
+#### Building
 From the start menu, open 'x64 Native Tools Command Prompt for vs2017'.
-cd <your_elphyrecoin_directory>
-mkdir build
-cd build
-set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%
-cmake -G "Visual Studio 15 2017 Win64" .. -DBOOST_ROOT=C:/local/boost_1_68_0
+
+`cd <your_elphyrecoin_directory>`
+
+`mkdir build`
+
+`cd build`
+
+`set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%
+cmake -G "Visual Studio 15 2017 Win64" .. -DBOOST_ROOT=C:/local/boost_1_68_0`
+
 If you have errors on this step about not being able to find the following static libraries, you may need to update your cmake. Open 'Visual Studio Installer' and click 'Update'.
 
-MSBuild Elphyrecoin.sln /p:Configuration=Release /m
+`MSBuild Elphyrecoin.sln /p:Configuration=Release /m`
+
 The binaries will be in the src/Release folder when you are complete.
 
-cd src
-cd Release
-Elphyrecoind.exe --version
-Raspberry Pi 3 B+ (AARCH64/ARM64)
+`cd src`
+
+`cd Release`
+
+`Elphyrecoind.exe --version`
+
+### Raspberry Pi 3 B+ (AARCH64/ARM64)
+
 The following images are known to work. Your operation system image MUST be 64 bit.
 
 Known working images
@@ -176,17 +223,24 @@ https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi#aarch64_supported_
 https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
 Once you have a 64 bit image installed, setup proceeds the same as any Linux distribution. Ensure you have at least 2GB of ram, or the build is likely to fail. You may need to setup swap space.
 
-Building
-git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2
-cd elphyrecoin2
-mkdir build
-cd build
-cmake ..
-make
+#### Building
+`git clone -b master --single-branch https://github.com/elphyrecoin/elphyrecoin2`
+
+`cd elphyrecoin2`
+
+`mkdir build`
+
+`cd build`
+
+`cmake ..`
+
+`make`
+
 The binaries will be in the src folder when you are complete.
 
-cd src
-./Elphyrecoind --version
+`cd src`
+
+`./Elphyrecoind --version`
 
 Thanks
 Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Developers, Elphyrecoin Developers
