@@ -118,7 +118,7 @@ install:
 - if [[ "$LABEL" == "aarch64" ]]; then tar zxvf ../../boost_1_55_0.tar.gz >/dev/null ; fi
 - if [[ "$LABEL" == "aarch64" ]]; then cd boost_1_55_0 ; fi
 - if [[ "$LABEL" == "aarch64" ]]; then ./bootstrap.sh ; fi
-- if [[ "$LABEL" == "aarch64" ]]; then curl https://raw.githubusercontent.com/lithe-project/lithe/development/scripts/fix_boost_aarch64.sh | sh ; fi
+- if [[ "$LABEL" == "aarch64" ]]; then curl https://raw.githubusercontent.com/elphyrecoin/elphyrecoin/development/scripts/fix_boost_aarch64.sh | sh ; fi
 - if [[ "$LABEL" == "aarch64" ]]; then ./b2 toolset=gcc-aarch64 --with-system --with-filesystem --with-thread --with-date_time --with-chrono --with-regex --with-serialization --with-program_options >/dev/null; fi
 - if [[ "$LABEL" == "aarch64" ]]; then export CUSTOM_BOOST_ROOT="-DBOOST_ROOT=`pwd`" ; fi
 - if [[ "$LABEL" == "aarch64" ]]; then export CUSTOM_TOOLCHAIN="-DCMAKE_TOOLCHAIN_FILE=../scripts/cross-aarch64.cmake" ; fi
@@ -135,14 +135,14 @@ script:
 before_deploy:
 - if [[ "${TRAVIS_TAG}" == "" ]]; then export TRAVIS_TAG=${TRAVIS_COMMIT} ; fi
 - cd src
-- TARGETS="Lithed miner zedwallet lithe-service zedwallet-beta cryptotest wallet-api"
+- TARGETS="Elphyrecoind miner zedwallet elphyre-service zedwallet-beta cryptotest wallet-api"
 - ${STRIP} ${TARGETS}
-- rm -rf lithe-${TRAVIS_TAG} 
-- mkdir lithe-${TRAVIS_TAG}
-- cp ${TARGETS} lithe-${TRAVIS_TAG}/
-- cp ../../LICENSE lithe-${TRAVIS_TAG}/
-- tar cvfz lithe-${TRAVIS_TAG}-${LABEL}.tar.gz lithe-${TRAVIS_TAG}/
+- rm -rf elphyrecoin-${TRAVIS_TAG} 
+- mkdir elphyrecoin-${TRAVIS_TAG}
+- cp ${TARGETS} elphyrecoin-${TRAVIS_TAG}/
+- cp ../../LICENSE elphyrecoin-${TRAVIS_TAG}/
+- tar cvfz elphyrecoin-${TRAVIS_TAG}-${LABEL}.tar.gz elphyrecoin-${TRAVIS_TAG}/
 - rm -rf builds
 - mkdir builds
-- cp lithe-${TRAVIS_TAG}-${LABEL}.tar.gz builds
+- cp elphyrecoin-${TRAVIS_TAG}-${LABEL}.tar.gz builds
 - cd ..
