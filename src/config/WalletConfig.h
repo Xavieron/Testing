@@ -38,7 +38,7 @@ namespace WalletConfig
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "https://github.com/elphyrecoin2";
+    const std::string contactLink = "https://github.com/elphyrecoin";
 
 
     /* The number of decimals your coin has */
