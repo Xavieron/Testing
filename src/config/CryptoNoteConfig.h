@@ -33,7 +33,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(2000000000000); // (20,000,000)
 /* block reward will be roughly 230-240. Max supply is 250MM.*/
-const unsigned EMISSION_SPEED_FACTOR                         = 22;
+const unsigned EMISSION_SPEED_FACTOR                         = 20;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
@@ -184,10 +184,11 @@ const char     LATEST_VERSION_URL[]                          = "http://github.co
 const std::string LICENSE_URL                                = "https://github.com/Xavieron/Testing/blob/master/LICENSE";
 const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 {
-    {  0x2f, 0x8b, 0x8a, 0x33, 0x8d, 0x2a, 0x98, 0x23, 0x01, 0xd7, 0x2f, 0x36, 0x57  }
+    {  0x7c, 0x6c, 0x6d, 0x6a, 0x6c, 0x7d, 0x70, 0x7b, 0x6b, 0x70, 0x65, 0x6d, 0x7d  }
 };
 
 const char* const SEED_NODES[] = {
-  "97.95.220.99:11236"
+  "18.224.93.39:11236",
+  "18.224.82.75:11236"
 };
 } // CryptoNote
