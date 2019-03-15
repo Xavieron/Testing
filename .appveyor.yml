@@ -17,19 +17,19 @@ build_script:
   - md build
   - cd build
   - cmake -G "Visual Studio 15 2017 Win64" ..
-  - MSBuild Elphyrecoin.sln /p:CLToolExe=clcache.exe /p:CLToolPath=c:\Python37\Scripts\ /p:Configuration=Release /m
+  - MSBuild Testing.sln /p:CLToolExe=clcache.exe /p:CLToolPath=c:\Python37\Scripts\ /p:Configuration=Release /m
   - src\Release\cryptotest.exe
 
 after_build:
   - clcache -s
   - if not defined APPVEYOR_REPO_TAG_NAME (set APPVEYOR_REPO_TAG_NAME=%APPVEYOR_REPO_COMMIT%)
   - cd src\Release
-  - mkdir elphyrecoin-%APPVEYOR_REPO_TAG_NAME%
-  - copy *.exe elphyrecoin-%APPVEYOR_REPO_TAG_NAME%
-  - copy ..\..\..\LICENSE elphyrecoin-%APPVEYOR_REPO_TAG_NAME%
-  - 7z a elphyrecoin-%APPVEYOR_REPO_TAG_NAME%-windows.zip elphyrecoin-%APPVEYOR_REPO_TAG_NAME%
-  - copy elphyrecoin-%APPVEYOR_REPO_TAG_NAME%-windows.zip ..\..\..\
+  - mkdir testing-%APPVEYOR_REPO_TAG_NAME%
+  - copy *.exe testing-%APPVEYOR_REPO_TAG_NAME%
+  - copy ..\..\..\LICENSE testing-%APPVEYOR_REPO_TAG_NAME%
+  - 7z a testing-%APPVEYOR_REPO_TAG_NAME%-windows.zip testing-%APPVEYOR_REPO_TAG_NAME%
+  - copy testing-%APPVEYOR_REPO_TAG_NAME%-windows.zip ..\..\..\
 
 artifacts:
-  - path: elphyrecoin-$(APPVEYOR_REPO_TAG_NAME)-windows.zip
-    name: ElphyrecoinRelease
+  - path: testing-$(APPVEYOR_REPO_TAG_NAME)-windows.zip
+    name: TestingRelease
