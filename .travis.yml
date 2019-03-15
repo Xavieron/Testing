@@ -135,14 +135,14 @@ script:
 before_deploy:
 - if [[ "${TRAVIS_TAG}" == "" ]]; then export TRAVIS_TAG=${TRAVIS_COMMIT} ; fi
 - cd src
-- TARGETS="Elphyrecoind miner zedwallet elphyre-service zedwallet-beta cryptotest wallet-api"
+- TARGETS="Testingd miner zedwallet testing-service zedwallet-beta cryptotest wallet-api"
 - ${STRIP} ${TARGETS}
-- rm -rf elphyrecoin-${TRAVIS_TAG} 
-- mkdir elphyrecoin-${TRAVIS_TAG}
-- cp ${TARGETS} elphyrecoin-${TRAVIS_TAG}/
-- cp ../../LICENSE elphyrecoin-${TRAVIS_TAG}/
-- tar cvfz elphyrecoin-${TRAVIS_TAG}-${LABEL}.tar.gz elphyrecoin-${TRAVIS_TAG}/
+- rm -rf testing-${TRAVIS_TAG} 
+- mkdir testing-${TRAVIS_TAG}
+- cp ${TARGETS} testing-${TRAVIS_TAG}/
+- cp ../../LICENSE testing-${TRAVIS_TAG}/
+- tar cvfz testing-${TRAVIS_TAG}-${LABEL}.tar.gz testing-${TRAVIS_TAG}/
 - rm -rf builds
 - mkdir builds
-- cp elphyrecoin-${TRAVIS_TAG}-${LABEL}.tar.gz builds
+- cp testing-${TRAVIS_TAG}-${LABEL}.tar.gz builds
 - cd ..
