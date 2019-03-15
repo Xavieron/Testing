@@ -3,6 +3,7 @@
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2019, The Lithe Project
 // Copyright (c) 2019, The Elphyrecoin Developers
+// Copyright (c) 2019, The Testing Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -30,15 +31,15 @@ const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 3 * DIFFICULTY_TA
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(2000000000000); // (250,000,000)
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(2000000000000); // (20,000,000)
 /* block reward will be roughly 230-240. Max supply is 250MM.*/
 const unsigned EMISSION_SPEED_FACTOR                         = 22;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
-const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(1875000000000); // 7.5% premine (18,750,000)
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(2000000000); // 7.5% premine (18,750,000)
 
-const char GENESIS_COINBASE_TX_HEX[] = "013c01ff000180fcd5f5c83602efebb3349b184567e3ac8195d96ba9d8b59f01b459c39c71022c4588de922aa32101a5b0ce4b9fb928cc53b4d232654246ad0b11e52b41db44beaac5b7b784f400f7";
+const char GENESIS_COINBASE_TX_HEX[] = "";
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
 /* This is the unix timestamp of the first "mined" block (technically block 2, not the genesis block)
@@ -126,7 +127,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "LuckyV";
+const char     CRYPTONOTE_NAME[]                             = "Testing";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -143,9 +144,9 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  11221;
-const int      RPC_DEFAULT_PORT                              =  11222;
-const int      SERVICE_DEFAULT_PORT                          =  11223;
+const int      P2P_DEFAULT_PORT                              =  11236;
+const int      RPC_DEFAULT_PORT                              =  11237;
+const int      SERVICE_DEFAULT_PORT                          =  11238;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -187,6 +188,6 @@ const static   boost::uuids::uuid CRYPTONOTE_NETWORK         =
 };
 
 const char* const SEED_NODES[] = {
-  "97.95.220.99:11221"
+  "97.95.220.99:11236"
 };
 } // CryptoNote
