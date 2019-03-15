@@ -39,7 +39,7 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 /* Premine amount */
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(2000000000); // 7.5% premine (18,750,000)
 
-const char GENESIS_COINBASE_TX_HEX[] = "";
+const char GENESIS_COINBASE_TX_HEX[] = "010a01ff000188f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210142694232c5b04151d9e4c27d31ec7a68ea568b19488cfcb422659a07a0e44dd5";
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
 /* This is the unix timestamp of the first "mined" block (technically block 2, not the genesis block)
